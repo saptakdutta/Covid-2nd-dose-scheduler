@@ -5,6 +5,7 @@ import requests as req
 import json as json
 from pathlib import Path
 from dateutil import parser
+from datetime import datetime
 
 #Set path
 cwd = Path.cwd()
@@ -44,7 +45,7 @@ headers = {
 payload = {
     #!TODO allow users to pass latitude and longitude values to the tool instead of defaulting downtown 
     "location":{"lat":45.3640192,"lng":-75.710464},
-    "fromDate":"2021-06-09",
+    "fromDate":datetime.today().strftime('%Y-%m-%d'),
     "vaccineData":"WyJhMWQ0dDAwMDAwMDFqZGtBQUEiXQ==",
     "doseNumber":2,
     "limit":20,
@@ -118,4 +119,3 @@ for i in range(len(search['locations'])):
     file.write(' '+'\n')
 
 file.close()
-# %%

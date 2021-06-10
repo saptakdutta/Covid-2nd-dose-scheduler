@@ -1,4 +1,4 @@
-
+#Libraries
 import numpy as np
 import pandas as pd
 import requests as req
@@ -6,6 +6,7 @@ import json as json
 from pathlib import Path
 from dateutil import parser
 
+#Set path
 cwd = Path.cwd()
 path = cwd.__str__()
 
@@ -13,6 +14,7 @@ path = cwd.__str__()
 with open(path+'/Config-dev.json') as f:
   config_data = json.load(f)
 
+#This section looks at existing appointment details
 url = 'https://api.covaxonbooking.ca/public/appointments/get'
 headers = {
     'authority': 'api.covaxonbooking.ca',
@@ -31,7 +33,7 @@ booking2 = rtrn['appointments'][1]
 dose_2_dttime = parser.parse(booking2['start'])
 
 file = open("Vax_Sched.txt","w")
-
+#This section searches for locations close to the user in Ottawa
 search_url = 'https://api.covaxonbooking.ca/public/locations/search'
 headers = {
     'authority': 'api.covaxonbooking.ca',
@@ -40,6 +42,7 @@ headers = {
     'referer': 'https://vaccine.covaxonbooking.ca/'
 }
 payload = {
+    #!TODO allow users to pass latitude and longitude values to the tool instead of defaulting downtown 
     "location":{"lat":45.3640192,"lng":-75.710464},
     "fromDate":"2021-06-09",
     "vaccineData":"WyJhMWQ0dDAwMDAwMDFqZGtBQUEiXQ==",

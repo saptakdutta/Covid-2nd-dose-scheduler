@@ -9,7 +9,8 @@ from dateutil import parser
 cwd = Path.cwd()
 path = cwd.__str__()
 
-with open(path+'/Config.json') as f:
+#Read in the cfg file. change this to Config instead of Config-dev on local
+with open(path+'/Config-dev.json') as f:
   config_data = json.load(f)
 
 url = 'https://api.covaxonbooking.ca/public/appointments/get'

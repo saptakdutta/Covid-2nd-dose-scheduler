@@ -14,10 +14,10 @@ parser = argparse.ArgumentParser(description="""This tool is envisoned to be a s
                                  vaccine slots at regular daily intervals. This removes the
                                  need for a user to manually check the vaccine rebooking site 
                                  for dosage slots.""")
-parser.add_argument('-l', '--latitude', default = 45.3640192,
+parser.add_argument('-lat', '--latitude', default = 45.3640192,
                       help= 'Geological latitude, defaults to downtown Ottawa',
                       type = float)
-parser.add_argument('-o', '--longitude', default = -75.710464,
+parser.add_argument('-lng', '--longitude', default = -75.710464,
                       help= 'Geological longitude, defaults to downtown Ottawa',
                       type = float)
 #Parse arguments 

@@ -4,8 +4,28 @@ import pandas as pd
 import requests as req
 import json as json
 from pathlib import Path
-from dateutil import parser
+from dateutil import parser as par
 from datetime import datetime
+import argparse
+
+#Set up command line arguments for latitude/longitude
+parser = argparse.ArgumentParser(description="""This tool is envisoned to be a server side 
+                                 application that sends users notifications about available
+                                 vaccine slots at regular daily intervals. This removes the
+                                 need for a user to manually check the vaccine rebooking site 
+                                 for dosage slots.""")
+parser.add_argument('-l', '--latitude', default = 45.3640192,
+                      help= 'Geological latitude, defaults to downtown Ottawa',
+                      type = float)
+parser.add_argument('-o', '--longitude', default = -75.710464,
+                      help= 'Geological longitude, defaults to downtown Ottawa',
+                      type = float)
+#Parse arguments 
+args = parser.parse_args()
+latitude = args.latitude
+longitude = args.longitude
+
+print('Given latitude: ',latitude,' Given longitude: ',longitude)
 
 #Set path
 cwd = Path.cwd()
@@ -31,7 +51,7 @@ payload = {
 ex = req.post(url, headers=headers, json= payload)
 rtrn = ex.json()
 booking2 = rtrn['appointments'][1]
-dose_2_dttime = parser.parse(booking2['start'])
+dose_2_dttime = par.parse(booking2['start'])
 
 file = open("Vax_Sched.txt","w")
 #This section searches for locations close to the user in Ottawa
@@ -44,7 +64,7 @@ headers = {
 }
 payload = {
     #!TODO allow users to pass latitude and longitude values to the tool instead of defaulting downtown 
-    "location":{"lat":45.3640192,"lng":-75.710464},
+    "location":{"lat":latitude,"lng":longitude},
     "fromDate":datetime.today().strftime('%Y-%m-%d'),
     "vaccineData":"WyJhMWQ0dDAwMDAwMDFqZGtBQUEiXQ==",
     "doseNumber":2,
@@ -55,7 +75,10 @@ payload = {
 ex = req.post(search_url, headers=headers, json= payload)
 search = ex.json()
 
-print('Current boking date: ', str(dose_2_dttime))
+print('Current dose 2 booking date: ', str(dose_2_dttime))
+coordinates= 'Given latitude: ',latitude,' Given longitude: ',longitude
+coordinates= str(coordinates)
+file.write(coordinates+ '\n')
 
 line0 = 'Current boking date: ', str(dose_2_dttime)
 line0 = str(line0)

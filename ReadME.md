@@ -1,4 +1,4 @@
-# Ottawa Covid 19 second dose sheduler
+# Ottawa Covid 19 second dose scheduler
 ## Overview
 The purpose of this tool is to automate the process of re-booking second doses on a local system. The tool is unable to secure the booking by itself, but it allows the user to immediately view a list of possible vaccine locations and dates. Following this feedback, the user can personally secure a vaccine appointment in the empty slot the tool desiplays.
 

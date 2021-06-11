@@ -11,7 +11,7 @@ The tool is meant to run as a windows batch file. In order to set up the virtual
 
 Once the environment is created, fill in the appropriate sections of the Config.json file. You will need to input your email, confirmation code and preferred appointment date. The tool only shows available dates before the preferred appointment date. 
 
-Finally, change the Config file from 'Config-dev.json' to 'Config.json' with the correct details when running on local
+Finally, edit the script call in .bat file from 'Config-dev.json' to 'Config.json' with the correct details when running on local
 
 ## Technical details
 TBD

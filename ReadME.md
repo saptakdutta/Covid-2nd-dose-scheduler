@@ -14,7 +14,10 @@ Once the environment is created, fill in the appropriate sections of the Config.
 Finally, edit the script call in .bat file from 'Config-dev.json' to 'Config.json' with the correct details when running on local
 
 ## Technical details
-TBD
+
+<p align= "left">
+    <img src="Figs/Workflow.jpg" alt="tool sample workflow" style="width: 30%;"/>
+</p>
 
 ## Sample output
 

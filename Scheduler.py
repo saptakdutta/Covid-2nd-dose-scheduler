@@ -84,9 +84,12 @@ coordinates= 'Given latitude: ',latitude,' Given longitude: ',longitude
 coordinates= str(coordinates)
 file.write(coordinates+ '\n')
 
-line0 = 'Current boking date: ', str(dose_2_dttime)
+line0 = 'Current booking date: ',str(dose_2_dttime)
 line0 = str(line0)
 file.write(line0+ '\n')
+line_0 = 'Looking for vaccine appointments before: ',config_data['PreferredAptDate']
+line_0 = str(line_0)
+file.write(line_0+ '\n')
 file.write('\n')
 
 for i in range(len(search['locations'])):

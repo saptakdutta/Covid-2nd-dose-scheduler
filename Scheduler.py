@@ -84,12 +84,18 @@ coordinates= 'Given latitude: ',latitude,' Given longitude: ',longitude
 coordinates= str(coordinates)
 file.write(coordinates+ '\n')
 
+# datetime object containing current date and time
+now = datetime.now()
+
 line0 = 'Current booking date: ',str(dose_2_dttime)
 line0 = str(line0)
 file.write(line0+ '\n')
 line_0 = 'Looking for vaccine appointments before: ',config_data['PreferredAptDate']
 line_0 = str(line_0)
 file.write(line_0+ '\n')
+line_1 = 'Run timestamp:: ', now.strftime("%d/%m/%Y %H:%M:%S")
+line_1 = str(line_1)
+file.write(line_1+ '\n')
 file.write('\n')
 
 for i in range(len(search['locations'])):
@@ -119,6 +125,7 @@ for i in range(len(search['locations'])):
     print('extId:', search['locations'][i]['extId']) 
     print('# of available days:', len(availability['date'][availability['available'] == True])) 
     print('suitable days:')
+    
     
     #Text output
     line1 = 'Name:', search['locations'][i]['name']

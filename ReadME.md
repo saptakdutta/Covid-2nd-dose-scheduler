@@ -18,7 +18,7 @@ TBD
 
 ## Sample output
 
-<p align= "center">
+<p align= "left">
     <img src="Figs/Output_Sample.JPG" alt="" style="height: 50%; width: 70%;"/>
 </p>
 

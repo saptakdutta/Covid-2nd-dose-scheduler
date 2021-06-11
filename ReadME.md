@@ -16,6 +16,10 @@ Finally, change the Config file from 'Config-dev.json' to 'Config.json' with the
 ## Technical details
 TBD
 
+## Sample output
+
+<img src="Figs/Output_Sample.JPG" alt="" style="height: 50%; width: 70%;"/>
+
 ## Future work
 1) Allow users to pass latitude and longitude values to the tool instead of defaulting to downtown Ottawa
 

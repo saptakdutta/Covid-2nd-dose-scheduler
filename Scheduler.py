@@ -20,10 +20,14 @@ parser.add_argument('-lat', '--latitude', default = 45.3640192,
 parser.add_argument('-lng', '--longitude', default = -75.710464,
                       help= 'Geological longitude, defaults to downtown Ottawa',
                       type = float)
+parser.add_argument('-cfg', '--config', default='Config.json',
+                      help= 'Leave blank unless for testing with Dev',
+                      type= str)
 #Parse arguments 
 args = parser.parse_args()
 latitude = args.latitude
 longitude = args.longitude
+config_file = args.config
 
 print('Given latitude: ',latitude,' Given longitude: ',longitude)
 
@@ -32,7 +36,7 @@ cwd = Path.cwd()
 path = cwd.__str__()
 
 #Read in the cfg file. change this to Config instead of Config-dev on local
-with open(path+'/Config-dev.json') as f:
+with open(path+'/'+config_file) as f:
   config_data = json.load(f)
 
 #This section looks at existing appointment details

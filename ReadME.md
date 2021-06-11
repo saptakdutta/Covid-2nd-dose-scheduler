@@ -2,7 +2,7 @@
 ## Overview
 The purpose of this tool is to automate the process of re-booking second doses on a local system. The tool is unable to secure the booking by itself, but it allows the user to immediately view a list of possible vaccine locations and dates. Following this feedback, the user can personally secure a vaccine appointment in the empty slot the tool desiplays.
 
-This tool is envisoned to be a server side application that sends users notifications about available vaccine slots at regular daily intervals. This removes the need for a user to manually check the vaccine rebooking site for dosage slots.
+This tool is envisoned in the future to be a server side application that sends users notifications about available vaccine slots at regular daily intervals. This removes the need for a user to manually check the vaccine rebooking site for dosage slots.
 
 ## Requirements
 The tool is meant to run as a windows batch file. In order to set up the virtual environment needed to run the tool, install and set up anaconda on the local device, then create a virtual environment like so:

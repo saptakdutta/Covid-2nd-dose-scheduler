@@ -15,7 +15,7 @@ Finally, edit the script call in .bat file from 'Config-dev.json' to 'Config.jso
 
 ## Technical details
 
-<p align= "left">
+<p align= "middle">
     <img src="Figs/Workflow.jpg" alt="tool sample workflow" style="width: 30%;"/>
 </p>
 

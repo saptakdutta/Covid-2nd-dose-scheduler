@@ -9,11 +9,7 @@ from datetime import datetime
 import argparse
 
 #Set up command line arguments for latitude/longitude
-parser = argparse.ArgumentParser(description="""This tool is envisoned to be a server side 
-                                 application that sends users notifications about available
-                                 vaccine slots at regular daily intervals. This removes the
-                                 need for a user to manually check the vaccine rebooking site 
-                                 for dosage slots.""")
+parser = argparse.ArgumentParser(description="""This code fetches covid slots which are unoccupied when given an appropriate date""")
 parser.add_argument('-lat', '--latitude', default = 45.3640192,
                       help= 'Geological latitude, defaults to downtown Ottawa',
                       type = float)
